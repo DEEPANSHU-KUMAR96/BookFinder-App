@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>📚Book Finder</title>
+</head>
+
+<body>
+
+    <header>
+        <h1>📚Book Finder</h1>
+        <div class="header-buttons">
+            <button id="homeBtn" onclick="showHome()">🏡 Home</button>
+            <button id="libraryBtn" onclick="showLibrary()">❤️ My Library</button>
+            <button id="themeToggle" onclick="toggleTheme()">🌛</button>
+        </div>
+    </header>
+
+    <main>
+        <section class="search-section">
+            <input type="text" id="searchInput" placeholder="Search for Books...">
+            <button onclick="searchBooks()" id="searchBtn">Search</button>
+
+            <button id="clearSearchBtn" style="display: none;" onclick="clearSearch()">Clear</button>
+        </section>
+
+
+        <section class="filter-section">
+            <select id="authorFilter" onchange="applyFilters()">
+                <option value="">Filter by Authors</option>
+            </select>
+
+            <select id="ratingFilter" onchange="applyFilters()">
+                <option value="">Filter by Rating</option>
+                <option value="1">1⭐ & up</option>
+                <option value="1">2⭐ & up</option>
+                <option value="1">3⭐ & up</option>
+                <option value="1">4⭐ & up</option>
+                <option value="1">5⭐ only</option>
+            </select>
+        </section>
+
+        <section id="results" class="book-grid"></section>
+
+        <section id="myLibrarySection" style="display: none;">
+            <h2>❤️ My Library
+                <button id="removeAllBtn" onclick="removeAllFromLibrary()">Remove All</button>
+            </h2>
+
+            <div id="myLibrary" class="book-grid"></div>
+
+        </section>
+    </main>
+    <footer>
+        <p>Made With ❤️ Using Google Books API.</p>
+    </footer>
+
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
